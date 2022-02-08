@@ -1,0 +1,147 @@
+{
+
+
+	"cycles": [
+		{
+			"name": "Cycle A",
+			"locationmap": {
+				"upper": "Juniors",
+				"lower": "Freshmen"
+			}
+		},
+		{
+			"name": "Cycle B",
+			"locationmap": {
+				"upper": "Seniors",
+				"lower": "Sophomores"
+			}
+		}
+	],
+	"cycle::trackpos": 0,
+
+
+	"locations": [ "upper", "lower" ],
+
+
+	"jobs": [
+		{
+			"name": "Sweeping (Upper)",
+			"location": ["upper"],
+			"location::trackpos": 0,
+			"assigned": ["STUDENT A", "Freshmen"]
+		},
+		{
+			"name": "Sweeping (Lower)",
+			"location": ["lower"],
+			"location::trackpos": 0,
+			"assigned": ["STUDENT B", "Sophomores"]
+		},
+		{
+			"name": "Sweeping (Related)",
+			"location": ["upper", "lower"],
+			"location::trackpos": 0,
+			"assigned": ["STUDENT C", "Freshmen"]
+		},
+		{
+			"name": "Trash A",
+			"location": ["upper"],
+			"location::trackpos": 0,
+			"assigned": ["STUDENT D", "Freshmen"]
+		},
+		{
+			"name": "Trash B",
+			"location": ["lower"],
+			"location::trackpos": 0,
+			"assigned": ["STUDENT E", "Sophomores"]
+		}
+	],
+
+
+	"classes": {
+		"Freshmen": {
+			"color": "white",
+			"student::trackpos": 0,
+			"studentlist": [
+				"Nathaniel Allen", "Pricille Emmanuella Blega", "William Bogdan",
+				"Miranda Burkholder", "Samuel Carneiro", "Samantha Carroll",
+				"Benjamin Catalogna", "Zabel Derkosrofian", "Eric Ferreira",
+				"Riely Gomes", "Joshua Gould", "Tyler Grybowski", "Riley Jackson",
+				"Ian Maguire", "Jack Nevens", "Aris Pavel", "Jacob Rajotte",
+				"Sean Russo", "Joseph Somaio"
+			]
+		},
+		"Sophomores": {
+			"color": "gold",
+			"student::trackpos": 0,
+			"studentlist": [
+				"Maximillian Chosta", "Tyler Clare", "Lourenco DaSilva",
+				"Jacob Decatur", "Ellen Franco", "Benjamin Joseph",
+				"Izamar Laboy Villegas", "Vaness Lizotte", "Soumith Madadi",
+				"Ryan Marino", "Holden Marnell", "Eduardo Marques",
+				"Nathan Meleedy", "Manuel Nunes", "Anthony Octavius",
+				"Anthony Persico", "Raymond Randor", "Caden Roy",
+				"Jacob Scott", "Aiden Simpson", "Tyler Stevens",
+				"Andrew White"
+			]
+		},
+		"Juniors": {
+			"color": "purple",
+			"student::trackpos": 0,
+			"studentlist": [
+				"Jack Abbiuso", "Michael Allocca", "Zachary Barnes",
+				"Logan Betti", "Kaden Crawford", "Ethan Cushing",
+				"Nikolas Hall", "Adrian Lowell", "Jay Patel",
+				"Joshua Platt", "Edward Podlejski", "Benjamin Szydlik"
+			]
+		},
+		"Seniors": {
+			"color": "black",
+			"student::trackpos": 0,
+			"studentlist": [
+				"Anna Claro", "Troy DeCosta", "Zachary Goddard",
+				"Nathan Guertin", "Joshua Hayward", "Camden Laforest",
+				"Matthew Machado", "Liam Meyer", "Brendan Pajak",
+				"Tyler Rankins", "Edward Ribeiro", "Anthony Rose",
+				"Anthony Rose", "Amber Strapponi", "Mason Trottier",
+				"Benjamin Uthoff", "Celine Vaz"
+			]
+		}
+	},
+
+
+	"history": [
+		{
+			"cycle:trackpos": 0,
+			"jobs": [
+				{
+					"location::trackpos": 0,
+					"assigned": ["STUDENT A", "Freshmen"]
+				},
+				{
+					"location::trackpos": 0,
+					"assigned": ["STUDENT B", "Sophomores"]
+				},
+				{
+					"location::trackpos": 0,
+					"assigned": ["STUDENT C", "Freshmen"]
+				},
+				{
+					"location::trackpos": 0,
+					"assigned": ["STUDENT D", "Freshmen"]
+				},
+				{
+					"location::trackpos": 0,
+					"assigned": ["STUDENT E", "Sophomores"]
+				}
+			],
+			"classes::trackpos": {
+				"Freshmen": 0,
+				"Sophomores": 0,
+				"Juniors": 0,
+				"Seniors": 0
+			}
+		}
+	]
+
+
+}

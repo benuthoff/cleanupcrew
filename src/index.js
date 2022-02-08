@@ -32,37 +32,17 @@ var CleanupApp = new Vue({
 			}
 		],
 
-		students: {
-			'A Cycle': {
-				'upper': [],
-				'lower': [],
-				'terms': [
-					{
-						'name': 'Freshman',
-						'color': 'white'
-					},
-					{
-						'name': 'Junior',
-						'color': 'purple'
-					}
-				]
-			},
-			'B Cycle': {
-				'upper': [],
-				'lower': [],
-				'terms': [
-					{
-						'name': 'Freshman',
-						'color': 'white'
-					},
-					{
-						'name': 'Junior',
-						'color': 'purple'
-					}
-				]
-			}
-		}
+		students: {},
+		history: []
 
 	}
 
+});
+
+// Socket Pointers
+var socket = io();
+
+socket.on('datasend', (store) => { // Gets data from backend.
+	CleanupApp.students = store.active;
+	CleanupApp.history = store.history;
 });

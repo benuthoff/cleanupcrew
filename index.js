@@ -13,11 +13,21 @@ const io = new Socket.Server(server);
 
 const fs = require('fs');
 
-// Socket.io Endpoints
+var STORE = JSON.parse(fs.readFileSync('./store.json'));
 
+// Socket.io Endpoints
+io.on('connection', (socket) => {
+	// New Connection!
+	socket.emit('datasend', STORE);
+})
 
 // Run Web Server.
 app.use(express.static('src'));
 server.listen(9900, () => {
 	console.log('listening on *:9900');
 });
+
+// Saving changes to savestore.
+function savestore() {
+
+};
