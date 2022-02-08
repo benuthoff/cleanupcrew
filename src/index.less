@@ -1,0 +1,114 @@
+// Web Client Styling
+// by Ben Uthoff
+
+body {
+
+	margin: 30px;
+	height: calc(100vh - 64px);
+	cursor: default;
+	user-select: none;
+
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #023047;
+	border: solid 2px #219EBC;
+	color: white;
+
+	#vueapp {
+		height: auto;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto 200px;
+		row-gap: 40px;
+		height: calc(100vh - 64px);
+	}
+
+	// Color Palette from https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500
+
+}
+
+#main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	font-size: 60px;
+	height: 70px;
+	margin-bottom: 74px;
+	text-align: center;
+}
+
+#roleview {
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+
+	& > div {
+		width: 400px;
+		height: 165px;
+	}
+
+	h2 {
+		font-size: 30px;
+		text-align: center;
+	}
+	p {
+		font-size: 24px;
+		text-align: center;
+	}
+
+}
+
+#bottom {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 0 40px;
+	border-top: solid 2px #219ebc;
+
+}
+
+#buttons {
+
+	display: grid;
+	grid-template-columns: 110px 300px 110px;
+	column-gap: 30px;
+	height: 110px;
+
+	& > * {
+
+		cursor: pointer;
+		border: solid 2px #219ebc;
+		border-radius: 8px;
+		text-align: center;
+		transition: 0.1s;
+
+		&:hover {
+			color: #ffb803;
+			border-color: #fb8600;
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+
+	}
+
+	.mini {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#reroll {
+		font-size: 36px;
+		padding: 30px;
+	}
+
+}
