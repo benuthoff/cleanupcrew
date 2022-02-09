@@ -24,9 +24,10 @@
 	
 		<div id='roleview'>
 	
-			<div v-for='s in jobs'>
+			<div v-for='(s, index) in jobs'>
 				<h2>{{ s.name }}</h2>
 				<p>{{ s.assigned[0] }} <i :style='{ backgroundColor: classes[ s.assigned[1] ].color }'></i></p>
+				<div class='absent' @click='absentStudent(index, s.assigned[1])'>Absent!</div>
 			</div>
 	
 		</div>

@@ -66,6 +66,24 @@ var CleanupApp = new Vue({
 
 		},
 
+		absentStudent(id, clss) {
+			
+			// Go to the next student in the class. Account for overflow
+			CleanupApp.classes[clss].student_trackpos += 1;
+			if ( CleanupApp.classes[clss].student_trackpos >= CleanupApp.classes[clss].studentlist.length )
+				{ CleanupApp.classes[clss].student_trackpos = 0 };
+			
+			// Get the name of the chosen student.
+			let stdnt = CleanupApp.classes[clss].studentlist[ CleanupApp.classes[clss].student_trackpos ];
+
+			CleanupApp.jobs[id].assigned = [ stdnt, clss ];
+
+			CleanupApp.history.shift();
+			CleanupApp.addHistoryItem();
+			CleanupApp.saveData();
+
+		},
+
 		resetAll() { // Resets all cycles
 
 			CleanupApp.closeMenus();

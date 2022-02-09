@@ -7,6 +7,9 @@
 // Customizing config.json:
 //    https://github.com/benuthoff/cleanupcrew/wiki/CleanupCrew-Documentation#json-config-reference
 
+// This app was made to be viewed in its own window.
+// Go to https://CleanupCrew.benuthoff.repl.co!
+
 // Dependencies and Setup.
 const express = require('express')
 const app = express();
