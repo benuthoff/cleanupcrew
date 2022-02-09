@@ -24,9 +24,9 @@
 	
 		<div id='roleview'>
 	
-			<div v-for='s in roles'>
+			<div v-for='s in jobs'>
 				<h2>{{ s.name }}</h2>
-				<p>{{ s.assigned }}</p>
+				<p>{{ s.assigned[0] }} <i :style='{ backgroundColor: classes[ s.assigned[1] ].color }'></i></p>
 			</div>
 	
 		</div>
@@ -37,16 +37,49 @@
 	
 		<div id='buttons'>
 	
-			<div class='mini'>
+			<div class='mini' @click='historymenu = true; infomenu = false'>
 				<i data-feather='rotate-ccw' width='52px' height='52px'></i>
 			</div>
-			<div id='reroll'>Next Group</div>
-			<div class='mini'>
+			<div id='reroll' @click='nextGroup'>Next Group</div>
+			<div class='mini' @click='infomenu = true; historymenu = false'>
 				<i data-feather='info' width='52px' height='52px'></i>
 			</div>
 	
 		</div>
 	
+	</div>
+
+	<div id='menu' v-show='infomenu || historymenu'>
+
+		<div class='leave' @click='closeMenus'>
+			<i data-feather='x' width='52px' height='52px'></i>
+		</div>
+
+		<div v-show='infomenu'>
+			<h1>Cleanup Crew</h1>
+			<h2>Written by Ben Uthoff</h2>
+			<br><br>
+			<div class='button' @click='resetAll'>Reset All</div>
+			<div class='button' @click='clearHistory'>Clear History</div>
+		</div>
+
+		<div v-show='historymenu'>
+			<h1>Group History</h1>
+			<br>
+
+			<table v-for='point in history'>
+
+				<tr>
+					<td v-for='j in jobs'><b>{{ j.name }}</b></td>
+				</tr>
+				<tr>
+					<td v-for='s in point.jobs'>{{ s.assigned[0] }} <i :style='{ backgroundColor: classes[ s.assigned[1] ].color }'></i></td>
+				</tr>
+
+			</table>
+
+		</div>
+
 	</div>
 
 </div>

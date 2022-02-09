@@ -59,6 +59,15 @@ h1 {
 	p {
 		font-size: 24px;
 		text-align: center;
+
+		& > i {
+			height: 18px;
+			width: 18px;
+			display: inline-block;
+			margin-left: 10px;
+			border-radius: 9999px;
+		}
+
 	}
 
 }
@@ -111,4 +120,98 @@ h1 {
 		padding: 30px;
 	}
 
+}
+
+#menu {
+
+	position: fixed;
+	top: 140px; bottom: 140px;
+	left: 160px; right: 160px;
+	background-color: #023047;
+	border: solid 2px #219ebc;
+	border-radius: 12px;
+	box-shadow: #000000a1 0 0 20px;
+	padding: 40px;
+
+	animation: fadeIn .2s;
+	overflow-y: auto;
+
+	.leave {
+
+		position: absolute;
+		top: 20px; right: 20px;
+		cursor: pointer;
+		height: 52px;
+		border-radius: 8px;
+		transition: 0.1s;
+		outline: solid 2px transparent;
+
+		&:hover {
+			outline: solid 2px #fb8600;
+			color: #ffb803;
+		}
+		&:active {
+			transform: scale(0.95);
+		}
+
+	}
+
+	h1 {
+		text-align: left;
+		margin-top: 0;
+		margin-bottom: 26px;
+	}
+
+	.button {
+
+		cursor: pointer;
+		border: solid 2px #219ebc;
+		border-radius: 8px;
+		text-align: center;
+		transition: 0.1s;
+		padding: 20px;
+		font-size: 30px;
+		margin-bottom: 20px;
+
+		&:hover {
+			color: #ffb803;
+			border-color: #fb8600;
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+
+	}
+
+	table {
+		display: block;
+		margin-bottom: 40px;
+	}
+
+	td {
+		border: 1px solid #8ecae6;
+		text-align: left;
+		padding: 8px;
+		background-color: #8ecae62b;
+
+		& > i {
+			height: 18px;
+			width: 18px;
+			display: inline-block;
+			margin-left: 10px;
+			border-radius: 9999px;
+		}
+
+	}
+
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

@@ -1,6 +1,11 @@
 // Cleanup Crew Program
 // by Ben Uthoff
 
+// LINKS TO DOCS:
+// Host the server yourself:
+//    https://github.com/benuthoff/cleanupcrew/wiki/CleanupCrew-Documentation#setup
+// Customizing config.json:
+//    https://github.com/benuthoff/cleanupcrew/wiki/CleanupCrew-Documentation#json-config-reference
 
 // Dependencies and Setup.
 const express = require('express')
@@ -13,12 +18,19 @@ const io = new Socket.Server(server);
 
 const fs = require('fs');
 
-var STORE = JSON.parse(fs.readFileSync('./store.json'));
+var STORE = JSON.parse(fs.readFileSync('./config.json'));
 
 // Socket.io Endpoints
 io.on('connection', (socket) => {
-	// New Connection!
+
+	// New Connection! Send the client the data.
 	socket.emit('datasend', STORE);
+
+	socket.on('datasync', (store) => {
+		STORE = store;
+		fs.writeFileSync('./config.json', JSON.stringify(store));
+	});
+
 })
 
 // Run Web Server.
@@ -26,8 +38,3 @@ app.use(express.static('src'));
 server.listen(9900, () => {
 	console.log('listening on *:9900');
 });
-
-// Saving changes to savestore.
-function savestore() {
-
-};
