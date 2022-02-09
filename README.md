@@ -1,5 +1,5 @@
 # cleanupcrew
-A program for selecting students to clean the shop room. Includes a history for keeping track of who took what shop.
+A web app created to select students for cleaning duty. 
 
 ## Images
 ![image](https://user-images.githubusercontent.com/81537940/153098991-0f031fd4-7715-4030-b35f-a2536743c6b8.png)
