@@ -7,8 +7,8 @@
 // Customizing config.json:
 //    https://github.com/benuthoff/cleanupcrew/wiki/CleanupCrew-Documentation#json-config-reference
 
-// This app was made to be viewed in its own window.
-// Go to https://CleanupCrew.benuthoff.repl.co!
+// !! THIS APP WAS MADE TO BE VIEWED IN A SEPARATE WINDOW !!
+// Head to "https://CleanupCrew.benuthoff.repl.co" !
 
 // Dependencies and Setup.
 const express = require('express')
@@ -32,6 +32,7 @@ io.on('connection', (socket) => {
 	socket.on('datasync', (store) => {
 		STORE = store;
 		fs.writeFileSync('./config.json', JSON.stringify(store));
+		io.emit('datasend', STORE);
 	});
 
 })
